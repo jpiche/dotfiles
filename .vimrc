@@ -9,7 +9,8 @@ if has("gui_running")
 endif
 set number
 
-call pathogen#infect()
+" `silent` is used for graceful failing on machines without it
+silent! call pathogen#infect()
 filetype plugin indent on
 
 autocmd FileType java set ts=4 sts=4 sw=4
