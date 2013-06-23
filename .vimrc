@@ -1,7 +1,8 @@
 set nocp noswapfile
 syn on
 
-set ai bs=indent,eol,start et sm is ic scs ruler
+set bs=indent,eol,start
+set ai et sm is ic scs ruler
 set ts=2 sts=2 sw=2
 set guioptions-=T
 if has("gui_running")
