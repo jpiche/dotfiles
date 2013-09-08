@@ -10,6 +10,10 @@ if has("gui_running")
 endif
 set number
 
+" display invisible characters, except eol
+set listchars=tab:>-,trail:~,extends:>,precedes:<
+set list
+
 " `silent` is used for graceful failing on machines without it
 silent! call pathogen#infect()
 filetype plugin indent on
