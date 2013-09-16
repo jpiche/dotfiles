@@ -10,22 +10,39 @@ if has("gui_running")
 endif
 set number
 
+filetype off
+
+" load plugins with vundle
+set rtp+=~/.vim/bundle/vundle/
+silent! call vundle#rc()
+if exists(':Bundle')
+  Bundle 'gmarik/vundle'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'eraserhd/vim-ios'
+  Bundle 'derekwyatt/vim-scala'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'groenewege/vim-less'
+  Bundle 'tpope/vim-haml'
+
+  " Dash
+  Bundle 'rizzatti/funcoo.vim'
+  Bundle 'rizzatti/dash.vim'
+end
+
+filetype plugin indent on
+
+au FileType java set ts=4 sts=4 sw=4
+au FileType php set ts=4 sts=4 sw=4
+
+" if text file, turn on spell check
+au FileType text set spell
+au FileType text set lbr
+au FileType tex set spell
+au FileType tex set lbr
+
 " display invisible characters, except eol
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set list
-
-" `silent` is used for graceful failing on machines without it
-silent! call pathogen#infect()
-filetype plugin indent on
-
-autocmd FileType java set ts=4 sts=4 sw=4
-autocmd FileType php set ts=4 sts=4 sw=4
-
-" if text file, turn on spell check
-autocmd FileType text set spell
-autocmd FileType text set lbr
-autocmd FileType tex set spell
-autocmd FileType tex set lbr
 
 noremap j gj
 noremap k gk
