@@ -1,0 +1,29 @@
+
+# shortcuts for less typing
+alias ls="ls --color=auto -p"
+alias ll="ls --color=auto -lp"
+alias la="ls --color=auto -lpa"
+alias j="jobs"
+alias htop="sudo htop"
+alias g="git status"
+alias vim="vim -p"
+alias f="foreman start"
+alias t="tmux new-session -A -s \${PWD##*/}"
+
+if command -v launchctl >/dev/null 2>&1; then
+  # mac os x server launchers
+  alias nginx.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist"
+  alias nginx.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist"
+  alias pg.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+  alias pg.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+  alias mongo.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
+  alias mongo.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist"
+  alias redis.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist"
+  alias redis.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.redis.plist"
+fi
+
+# fun stuff
+alias server="python -m SimpleHTTPServer 8888"
+
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"

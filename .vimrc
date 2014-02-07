@@ -23,6 +23,7 @@ if exists(':Bundle')
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'groenewege/vim-less'
   Bundle 'tpope/vim-haml'
+  Bundle 'digitaltoad/vim-jade'
 
   " Dash
   Bundle 'rizzatti/funcoo.vim'
@@ -35,10 +36,13 @@ au FileType java set ts=4 sts=4 sw=4
 au FileType php set ts=4 sts=4 sw=4
 
 " if text file, turn on spell check
-au FileType text set spell
-au FileType text set lbr
-au FileType tex set spell
-au FileType tex set lbr
+au FileType text set spell lbr
+au FileType tex set spell lbr
+
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+au FileType markdown set spell
+au FileType markdown set wrap linebreak nolist
+au FileType markdown set nonumber
 
 " display invisible characters, except eol
 set listchars=tab:>-,trail:~,extends:>,precedes:<
