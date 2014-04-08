@@ -18,7 +18,6 @@ silent! call vundle#rc()
 if exists(':Bundle')
   Bundle 'gmarik/vundle'
   Bundle 'kchmck/vim-coffee-script'
-  Bundle 'eraserhd/vim-ios'
   Bundle 'derekwyatt/vim-scala'
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'groenewege/vim-less'

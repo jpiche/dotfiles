@@ -9,6 +9,7 @@ alias g="git status"
 alias vim="vim -p"
 alias f="foreman start"
 alias t="tmux new-session -A -s \${PWD##*/}"
+alias tunnel="ssh -D 9999 -C -N"
 
 if command -v launchctl >/dev/null 2>&1; then
   # mac os x server launchers
