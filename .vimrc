@@ -23,11 +23,17 @@ if exists(':Bundle')
   Bundle 'groenewege/vim-less'
   Bundle 'tpope/vim-haml'
   Bundle 'digitaltoad/vim-jade'
+  Bundle 'scrooloose/nerdtree'
 
   " Dash
   Bundle 'rizzatti/funcoo.vim'
   Bundle 'rizzatti/dash.vim'
 end
+
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-c><C-c> :NERDTreeToggle<CR>
 
 filetype plugin indent on
 
