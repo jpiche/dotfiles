@@ -32,8 +32,8 @@ end
 
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-c><C-c> :NERDTreeToggle<CR>
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && exists(':NERDTree') | NERDTree | endif
+nmap <C-c><C-c> :NERDTreeToggle<CR>
 
 filetype plugin indent on
 
